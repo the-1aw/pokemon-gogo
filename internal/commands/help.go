@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func Help() error {
+func help(_ *Config) error {
 	fmt.Println("Welcome to the Pokedex!")
 	fmt.Println("Usage:")
 	fmt.Println()
@@ -15,6 +15,6 @@ func Help() error {
 }
 
 func init() {
-	cmd := Command{Description: "Displays a help message", Run: Help}
+	cmd := Command{Description: "Displays a help message", Run: help}
 	registerCommand("help", cmd)
 }

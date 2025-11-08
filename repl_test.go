@@ -21,7 +21,6 @@ func TestCleanInput(t *testing.T) {
 			if !reflect.DeepEqual(got, test.want) {
 				t.Fatalf("expected: %#v, got: %#v", test.want, got)
 			}
-
 		})
 	}
 }

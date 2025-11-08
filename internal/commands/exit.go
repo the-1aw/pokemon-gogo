@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func Exit() error {
+func exit(_ *Config) error {
 	fmt.Println("Closing the Pokedex... Goodbye!")
 	os.Exit(0)
 	return nil
@@ -14,7 +14,7 @@ func Exit() error {
 func init() {
 	cmd := Command{
 		Description: "Exit the Pokedex",
-		Run:         Exit,
+		Run:         exit,
 	}
 	registerCommand("exit", cmd)
 }
