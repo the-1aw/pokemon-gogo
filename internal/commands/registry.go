@@ -3,6 +3,7 @@ package commands
 type Config struct {
 	Next     *string
 	Previous *string
+	Args     []string
 }
 
 type Command struct {

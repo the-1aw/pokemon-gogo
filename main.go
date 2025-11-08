@@ -23,6 +23,9 @@ func main() {
 		if len(cleanInput) == 0 {
 			continue
 		}
+		if len(cleanInput) > 1 {
+			config.Args = cleanInput[1:]
+		}
 		if cmd, ok := commands.Registry[cleanInput[0]]; ok == true {
 			if err := cmd.Run(&config); err != nil {
 				fmt.Println(err)
@@ -30,5 +33,6 @@ func main() {
 		} else {
 			fmt.Println("Unknown command")
 		}
+		config.Args = nil
 	}
 }
