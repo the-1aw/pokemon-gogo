@@ -1,0 +1,5 @@
+# Exclude go binary
+pokemon-gogo
+
+# Excluse log file use for testing
+*.log
