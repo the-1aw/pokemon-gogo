@@ -11,7 +11,7 @@ import (
 const Prompt = "Pokedex > "
 
 func main() {
-	config := commands.Config{}
+	config := commands.NewConfig()
 	scanner := bufio.NewScanner(os.Stdin)
 	for {
 		fmt.Print(Prompt)

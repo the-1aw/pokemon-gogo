@@ -21,6 +21,8 @@ func catch(c *Config) error {
 	catchRate := 0.85
 	if (float64(rand.Intn(100)) / 100.) < catchRate {
 		fmt.Printf("%s was caught!\n", pokemon.Name)
+		fmt.Println("You may now inspect it with the inspect command.")
+		c.Pc[pokemon.Name] = pokemon
 	} else {
 		fmt.Printf("%s escaped!\n", pokemon.Name)
 	}
