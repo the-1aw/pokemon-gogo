@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/the-1aw/pokemon-gogo/commands"
+	"github.com/the-1aw/pokemon-gogo/internal/commands"
 )
 
 const Prompt = "Pokedex > "
