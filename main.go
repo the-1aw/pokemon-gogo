@@ -4,6 +4,8 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+
+	"github.com/the-1aw/pokemon-gogo/commands"
 )
 
 const Prompt = "Pokedex > "
@@ -20,6 +22,12 @@ func main() {
 		if len(cleanInput) == 0 {
 			continue
 		}
-		fmt.Println("Your command was:", cleanInput[0])
+		if cmd, ok := commands.Registry[cleanInput[0]]; ok == true {
+			if err := cmd.Run(); err != nil {
+				fmt.Println(err)
+			}
+		} else {
+			fmt.Println("Unknown command")
+		}
 	}
 }
